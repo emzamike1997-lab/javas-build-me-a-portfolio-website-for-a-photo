@@ -1,0 +1,129 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photographer Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 10px;
+        }
+        .nav a:hover {
+            color: #ccc;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            clear: both;
+        }
+        @media only screen and (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .gallery {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Photographer Portfolio</h1>
+    </div>
+    <div class="nav">
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div class="container">
+        <div id="about">
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div id="gallery">
+            <h2>My Gallery</h2>
+            <div class="gallery">
+                <img src="https://picsum.photos/200/300" alt="Image 1">
+                <img src="https://picsum.photos/200/301" alt="Image 2">
+                <img src="https://picsum.photos/200/302" alt="Image 3">
+                <img src="https://picsum.photos/200/303" alt="Image 4">
+                <img src="https://picsum.photos/200/304" alt="Image 5">
+                <img src="https://picsum.photos/200/305" alt="Image 6">
+            </div>
+        </div>
+        <div id="contact">
+            <h2>Get in Touch</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+            <form>
+                <input type="text" placeholder="Name" style="width: 100%; padding: 10px; margin: 10px 0; border: none; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+                <input type="email" placeholder="Email" style="width: 100%; padding: 10px; margin: 10px 0; border: none; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+                <textarea placeholder="Message" style="width: 100%; padding: 10px; margin: 10px 0; border: none; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"></textarea>
+                <button type="submit" style="width: 100%; padding: 10px; background-color: #333; color: #fff; border: none; border-radius: 10px; cursor: pointer;">Send</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2023 Photographer Portfolio</p>
+    </div>
+    <script>
+        // Add event listener to gallery images
+        const galleryImages = document.querySelectorAll('.gallery img');
+        galleryImages.forEach((image) => {
+            image.addEventListener('click', () => {
+                // Open image in new tab
+                window.open(image.src, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
+```
