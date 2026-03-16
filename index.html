@@ -34,27 +34,26 @@
         .nav a:hover {
             color: #ccc;
         }
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 10px;
+            margin: 10px;
+            width: calc(33.33% - 20px);
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .gallery img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 10px;
         }
-        .gallery img:hover {
-            transform: scale(1.1);
-            transition: transform 0.2s ease-in-out;
+        .gallery h2 {
+            padding: 10px;
+            margin: 0;
         }
         .footer {
             background-color: #333;
@@ -63,16 +62,6 @@
             text-align: center;
             clear: both;
         }
-        @media only screen and (max-width: 768px) {
-            .gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media only screen and (max-width: 480px) {
-            .gallery {
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
     </style>
 </head>
 <body>
@@ -80,47 +69,46 @@
         <h1>Photographer Portfolio</h1>
     </div>
     <div class="nav">
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
     </div>
-    <div class="container">
-        <div id="about">
-            <h2>About Me</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+    <div class="content">
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300" alt="Image 1">
+            <h2>Image 1</h2>
         </div>
-        <div id="gallery">
-            <h2>My Gallery</h2>
-            <div class="gallery">
-                <img src="https://picsum.photos/200/300" alt="Image 1">
-                <img src="https://picsum.photos/200/301" alt="Image 2">
-                <img src="https://picsum.photos/200/302" alt="Image 3">
-                <img src="https://picsum.photos/200/303" alt="Image 4">
-                <img src="https://picsum.photos/200/304" alt="Image 5">
-                <img src="https://picsum.photos/200/305" alt="Image 6">
-            </div>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300" alt="Image 2">
+            <h2>Image 2</h2>
         </div>
-        <div id="contact">
-            <h2>Get in Touch</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
-            <form>
-                <input type="text" placeholder="Name" style="width: 100%; padding: 10px; margin: 10px 0; border: none; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-                <input type="email" placeholder="Email" style="width: 100%; padding: 10px; margin: 10px 0; border: none; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-                <textarea placeholder="Message" style="width: 100%; padding: 10px; margin: 10px 0; border: none; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"></textarea>
-                <button type="submit" style="width: 100%; padding: 10px; background-color: #333; color: #fff; border: none; border-radius: 10px; cursor: pointer;">Send</button>
-            </form>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300" alt="Image 3">
+            <h2>Image 3</h2>
+        </div>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300" alt="Image 4">
+            <h2>Image 4</h2>
+        </div>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300" alt="Image 5">
+            <h2>Image 5</h2>
+        </div>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300" alt="Image 6">
+            <h2>Image 6</h2>
         </div>
     </div>
     <div class="footer">
-        <p>&copy; 2023 Photographer Portfolio</p>
+        &copy; 2023 Photographer Portfolio
     </div>
     <script>
-        // Add event listener to gallery images
-        const galleryImages = document.querySelectorAll('.gallery img');
-        galleryImages.forEach((image) => {
-            image.addEventListener('click', () => {
-                // Open image in new tab
-                window.open(image.src, '_blank');
+        // Add event listener to nav links
+        const navLinks = document.querySelectorAll('.nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                // Add functionality to nav links
             });
         });
     </script>
