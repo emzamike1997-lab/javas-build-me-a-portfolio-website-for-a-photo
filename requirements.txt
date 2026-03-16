@@ -1,0 +1,14 @@
+```
+Flask
+Flask-SQLAlchemy
+Flask-Marshmallow
+```
+
+To run the application, navigate to the project directory and run the following commands:
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python run.py
+```
+This will start the development server, and you can access the API at `http://localhost:5000`. You can use a tool like `curl` or a REST client to test the API endpoints.
